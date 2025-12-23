@@ -1,21 +1,32 @@
 <script setup>
-    import { ref } from 'vue'
+    import { ref, watch } from 'vue'
 
     const titulo = ref('Usuários Cadastrados')
     const texto = ref('Usuário não encontrado')
     const btn = ref('Novo Usuário')
+
+    const emit = defineEmits(['novo-usuario', 'buscar'])
+
+    const busca = ref('')
+
+    watch(busca, (valor) => {
+        emit('buscar', valor)
+    })
 </script>
 
 <template>
     <div class="container">
         <div class="cabecalho">
             <h4>{{ titulo }}</h4>
-            <button>{{ btn }}</button>
+            <button @click="emit('novo-usuario')">{{ btn }}</button>
         </div>
         <div class="buscar">
-            <input type="search" placeholder="Buscar usuário">
+            <input 
+            type="search" placeholder="Buscar usuário"
+            v-model="busca"
+            >
         </div>
-        <div class="texto">
+        <div class="texto" v-if="semResultado & busca.length > 0">
             <h5>{{ texto }}</h5>
         </div>
     </div>
@@ -48,11 +59,13 @@
         transform: scale(1.05);
     }
     .buscar input{
-        padding: 7px 10px;
+        padding: 8px 10px;
         width: 100%;
         border: none;
         border-bottom: 1px solid #a1a1a1;
         margin-bottom: 5px;
+        margin-top: 5px;
+        font-size: 16px;
     }
     .texto h5{
         background-color: #fb19195e;

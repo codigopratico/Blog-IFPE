@@ -1,14 +1,12 @@
 <script setup>
   import { ref } from 'vue'
-  import BuscarView from './components/BuscarView.vue';
-  import CadastradosView from './components/CadastradosView.vue';
-  import InformacoesView from './components/InformacoesView.vue';
+  import AlunosView from './components/AlunosView.vue';
 
   const titulo = ref('Blog IFPE')
 </script>
 
 <template>
-  <div class="principal">
+  <form class="principal">
     <div class="geral">
       <div class="logo">
         <img src="./img/Logo.png" alt="Logo IF">
@@ -16,14 +14,9 @@
       <div class="titulo">
         <h1>{{ titulo }}</h1>
       </div>
-
-      <InformacoesView/>
-
-      <BuscarView/>
-
-      <CadastradosView />
+      <AlunosView />
     </div>
-  </div>
+  </form>
 </template>
 
 <style scoped>
