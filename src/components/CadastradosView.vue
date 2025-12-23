@@ -12,11 +12,11 @@
             <td>Username</td>
             <td></td>
         </tr>
-        <tr v-for="aluno in alunos" :key="aluno.id">
+        <tr class="conteudo" v-for="aluno in alunos" :key="aluno.id">
             <td>{{ aluno.nome }}</td>
             <td>{{ aluno.email }}</td>
             <td>{{ aluno.username }}</td>
-            <td>
+            <td id="icones">
                 <i class="bi bi-pencil"></i>
                 <i class="bi bi-trash"></i>
             </td>
@@ -27,16 +27,22 @@
 <style scoped>
     #tabela{
         width: 100%;
-        border-collapse: collapse
+        border-collapse: collapse;
+        margin-top: 5px;
     }
     #tabela #topo{
-        background-color: green;
+        background-color: var(--color-principal);
+        color: #fff;
         width: 100%;
     }
     #tabela tr td{
         border-bottom: 1px solid #999;
     }#tabela #topo td{
-        background-color: #04692db8;
+        background-color: var(--color-bg-btn);
+        font-size: 16px;
+        padding: 5px;
+    }#tabela .conteudo td{
+        padding: 10px;
     }
     img{
         width: 20px;
@@ -46,5 +52,9 @@
     }
     i:nth-child(2){
         color: red;
+    }#icones{
+        display: flex;
+        gap: 5px;
+        font-size: 17px;
     }
 </style>

@@ -9,14 +9,14 @@
 <template>
     <div class="container">
         <div class="cabecalho">
-            <p>{{ titulo }}</p>
+            <h4>{{ titulo }}</h4>
             <button>{{ btn }}</button>
         </div>
         <div class="buscar">
             <input type="search" placeholder="Buscar usuário">
         </div>
         <div class="texto">
-            <p>{{ texto }}</p>
+            <h5>{{ texto }}</h5>
         </div>
     </div>
 </template>
@@ -27,20 +27,39 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin-bottom: -10px;
+        margin-bottom: 0px;
+        margin-top: 15px;
+        margin-bottom: 5px;
+    }.cabecalho h4{
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 300;
+        color: var(--color-principal);
     }.cabecalho button{
-        padding: 3px 10px;
+        padding: 7px 15px;
+        background: var(--color-principal);
+        color: #fff;
+        font-size: 14px;
+        font-family: Arial, Helvetica, sans-serif;
+        border: none;
+        border-radius: 5px;
+        transition: all .3s;
+    }.cabecalho button:hover{
+        background-color: var(--color-bg-btnHover);
+        transform: scale(1.05);
     }
     .buscar input{
         padding: 7px 10px;
         width: 100%;
         border: none;
         border-bottom: 1px solid #a1a1a1;
-        margin-bottom: -10px;
+        margin-bottom: 5px;
     }
-    .texto p{
-        background-color: red;
+    .texto h5{
+        background-color: #fb19195e;
         padding: 10px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 300;
+        color: rgb(188, 0, 0);
     }
 
 </style>

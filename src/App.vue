@@ -27,6 +27,7 @@
 </template>
 
 <style scoped>
+@import url(./assets/base.css);
 @import url(./assets/main.css);
 
   .principal{
@@ -35,11 +36,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: var(--color-bg);
   }
   .geral{
-    border: 1px solid #000;
-    padding: 15px;
-    width: 600px;
+    border-radius: 20px;
+    padding: 25px;
+    width: 800px;
+    background-color: #fff;
   }
 
   .logo{
@@ -50,6 +53,11 @@
 
   .titulo{
     text-align: center;
+  }.titulo h1{
+    font-family: 'Laila', serif;
+    font-weight: 400;
+    font-size: 36px;
+    color: var(--color-principal);
   }
 
   
