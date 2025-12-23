@@ -35,11 +35,13 @@ const { alunos } = defineProps({
     
     <tbody v-else>
         <tr>
-            <td colspan="4" style="text-align: center; padding: 15px;">Nenhum aluno Cadastrado</td>
+            <td colspan="4" style="text-align: center; padding: 15px; color: var(--color-cinza-escuro);">Nenhum aluno Cadastrado</td>
         </tr>
     </tbody>
 
   </table>
+  <div class="verde-escuro"></div>
+  <div class="verde-claro"></div>
 </template>
 
 <style scoped>
@@ -50,28 +52,40 @@ const { alunos } = defineProps({
     }
     #tabela #topo{
         background-color: var(--color-principal);
-        color: #fff;
+        color: var(--color-branco);
         width: 100%;
     }
     #tabela tr td{
-        border-bottom: 1px solid #999;
+        border-bottom: 1px solid var(color-cinza-claro);
     }#tabela #topo td{
-        background-color: var(--color-bg-btn);
+        background-color: var(--color-verde-ifpe);
         font-size: 16px;
-        padding: 5px;
-    }#tabela .conteudo td{
+        padding: 5px 15px;
+    }#tabela #topo td:first-child{
+      border-radius: 10px 0 0 0;
+    }
+    #tabela .conteudo td{
         padding: 10px;
     }
     img{
         width: 20px;
     }
     i:first-child{
-        color: blue;
+        color: var(--color-azul);
     }
     i:nth-child(2){
-        color: red;
+        color: var(--color-vermelho-ifpe);
     }#icones{
         display: flex;
         gap: 5px;
+    }
+    .verde-escuro{
+      height: 10px;
+      background-color: var(--color-verde-ifpe);
+    }
+    .verde-claro{
+      height: 10px;
+      background-color: var(--color-verde-secundario);
+      border-radius: 0 0 5px 5px;
     }
 </style>

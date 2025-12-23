@@ -21,6 +21,7 @@
             <button @click="emit('novo-usuario')">{{ btn }}</button>
         </div>
         <div class="buscar">
+            <i class="fa-solid fa-magnifying-glass"></i>
             <input 
             type="search" placeholder="Buscar usuário"
             v-model="busca"
@@ -42,12 +43,11 @@
         margin-top: 15px;
         margin-bottom: 5px;
     }.cabecalho h4{
-        font-family: Arial, Helvetica, sans-serif;
-        font-weight: 300;
-        color: var(--color-principal);
+        font-weight: 450;
+        color: var(--color-verde-ifpe);
     }.cabecalho button{
         padding: 7px 15px;
-        background: var(--color-principal);
+        background: var(--color-verde-ifpe);
         color: #fff;
         font-size: 14px;
         font-family: Arial, Helvetica, sans-serif;
@@ -55,24 +55,32 @@
         border-radius: 5px;
         transition: all .3s;
     }.cabecalho button:hover{
-        background-color: var(--color-bg-btnHover);
+        background-color: var(--color-verde-secundario);
         transform: scale(1.05);
     }
     .buscar input{
         padding: 8px 10px;
         width: 100%;
-        border: none;
-        border-bottom: 1px solid #a1a1a1;
+        border: 1px solid var(--color-cinza-escuro);
         margin-bottom: 5px;
         margin-top: 5px;
         font-size: 16px;
+    }.buscar{
+        display: flex;
+        align-items: center;
+    }.buscar i{
+        font-size: 23.5px;
+        color: var(--color-branco);
+        padding: 10px;
+        background-color: var(--color-verde-ifpe);
+        border-radius: 10px 0 0 10px;
     }
     .texto h5{
         background-color: #fb19195e;
         padding: 10px;
         font-family: Arial, Helvetica, sans-serif;
         font-weight: 300;
-        color: rgb(188, 0, 0);
+        color: var(--color-vermelho-ifpe);
     }
 
 </style>

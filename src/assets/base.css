@@ -1,6 +1,24 @@
-:root {
+/**:root {
     --color-bg: rgb(220, 220, 220);
     --color-principal: #008f39;
     --color-bg-btn: #04692db8;
     --color-bg-btnHover: #024e21e3;
+}
+
+Verde IFPE:        #0B6E3B
+Verde secundário: #1E8E5A
+Vermelho IFPE:    #E53935
+Branco:           #FFFFFF
+Cinza claro:      #F2F2F2
+Cinza escuro:     #555555
+**/
+
+:root{
+    --color-verde-ifpe: #0B6E3B;
+    --color-verde-secundario: #1E8E5A;
+    --color-vermelho-ifpe: #E53935;
+    --color-branco: #FFF;
+    --color-cinza-claro: #F2F2F2;
+    --color-cinza-escuro: #555;
+    --color-azul: #120A8F;
 }

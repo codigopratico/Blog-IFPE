@@ -81,12 +81,21 @@
     <div class="main">
         <h4>{{ titulo }}</h4>
         <div class="inputs">
-            <input type="text" placeholder="Digite seu nome..." v-model="nome" required>
-            <input type="text" placeholder="Digite o username..." v-model="username" required>
+            <div class="input">
+                <i class="fa-solid fa-user"></i>
+                <input type="text" placeholder="Digite seu nome..." v-model="nome" required>
+            </div>
+            <div class="input">
+                <i class="fa-solid fa-at"></i>
+                <input type="text" placeholder="Digite o username..." v-model="username" required>
+            </div>
             <p v-if="props.erroUsername" class="erro">
                 {{ props.erroUsername }}
             </p>
-            <input type="email" placeholder="Digite o e-mail..." v-model="email" required>
+            <div class="input">
+                <i class="fa-solid fa-envelope"></i>
+                <input type="email" placeholder="Digite o e-mail..." v-model="email" required>
+            </div>
         </div>
         <div class="btns">
             <button @click="cancelar">{{ btn1 }}</button>
@@ -108,11 +117,21 @@
         flex-direction: column;
         gap: 10px;
         margin-top: 5px;
+    
+    }.inputs .input{
+        display: flex;
+        align-items: center;
+    }.inputs .input i{
+        font-size: 26px;
+        color: var(--color-branco);
+        padding: 10px;
+        background-color: var(--color-verde-ifpe);
+        border-radius: 10px 0 0 10px;
     }.inputs input{
         padding: 12px 15px;
         width: 100%;
-        border: 1px solid var(--color-principal);
-        border-radius: 15px;
+        border: 1.5px solid var(--color-verde-secundario);
+        border-radius: 0 15px 15px 0;
     }
     .btns{
         margin-top: 10px;
@@ -126,28 +145,27 @@
         transition: all 0.3s;
         cursor: pointer !important;
     }.btns button:first-child{
-        background-color: rgba(255, 0, 0, 0.841);
+        background-color: var(--color-vermelho-ifpe);
         color: #fff;
     }button:first-child:hover{
         background-color: #b3092bec;
         transform: scale(1.05);
     }
     .btns button:nth-child(2){
-        background-color: var(--color-principal);
+        background-color: var(--color-verde-ifpe);
         color: #fff;
     }.btns button:nth-child(2):hover{
-        background-color: var(--color-bg-btnHover);
+        background-color: var(--color-verde-secundario);
         transform: scale(1.05);
     }
     h4{
-        color: var(--color-principal);
-        font-family: Arial, Helvetica, sans-serif;
-        font-weight: 500;
+        color: var(--color-verde-ifpe);
+        font-weight: 450;
         font-size: 17px;
     }
 
     .erro {
-        color: red;
+        color: var(--color-vermelho-ifpe);
         font-size: 13px;
         margin-top: 4px;
     }

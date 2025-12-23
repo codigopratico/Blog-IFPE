@@ -8,12 +8,13 @@
 <template>
   <form class="principal">
     <div class="geral">
-      <div class="logo">
-        <img src="./img/Logo.png" alt="Logo IF">
-      </div>
-      <div class="titulo">
-        <h1>{{ titulo }}</h1>
-      </div>
+        <div class="logo">
+          <img src="./img/Logo.png" alt="Logo IF">
+        </div>
+        <div class="titulo">
+          <h1>{{ titulo }}</h1>
+        </div>
+        <hr id="linha">
       <AlunosView />
     </div>
   </form>
@@ -29,28 +30,38 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--color-bg);
+    padding: 25px;
+    background-color: var(--color-cinza-claro);
+    border-radius: 16px;
   }
   .geral{
     border-radius: 20px;
-    padding: 25px;
+    padding: 20px 30px 10px 30px;
     width: 800px;
-    background-color: #fff;
+    background-color: var(--color-branco);
+    box-shadow:
+    0 6px 20px rgba(0, 0, 0, 0.2),
+    0 14px 30px rgba(0, 0, 0, 0.10);
   }
-
   .logo{
-    text-align: right;
+    float: right;
   }.logo img{
-    height: 50px;
+    height: 65px;
   }
 
   .titulo{
+    margin-top: 10px;
     text-align: center;
+    margin-bottom: 10px;
   }.titulo h1{
-    font-family: 'Laila', serif;
     font-weight: 400;
     font-size: 36px;
-    color: var(--color-principal);
+    color: var(--color-verde-ifpe);
+  }
+  #linha{
+    width: 100%;
+    margin-bottom: 25px;
+    border: 1px solid var(--color-verde-secundario);
   }
 
   
