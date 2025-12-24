@@ -64,11 +64,18 @@ const editarAluno = (aluno) => {
 }
 
 const salvarEdicao = (alunoAtualizado) => {
+
+    if(usernameExiste(alunoAtualizado.username, alunoAtualizado.id)){
+        erroUsername.value = "User name já está em uso"
+        return
+    }
+
     const index = alunos.value.findIndex(a => a.id === alunoAtualizado.id)
     if (index !== -1) {
         alunos.value[index] = alunoAtualizado
     }
 
+    erroUsername.value = ''
     modoEdicao.value = false
     alunoEmEdicao.value = null
 }

@@ -87,19 +87,19 @@
             </div>
             <div class="input">
                 <i class="fa-solid fa-at"></i>
-                <input type="text" placeholder="Digite o username..." v-model="username" required>
+                <input type="text" placeholder="Digite seu usuário..." v-model="username" required>
             </div>
             <p v-if="props.erroUsername" class="erro">
                 {{ props.erroUsername }}
             </p>
             <div class="input">
                 <i class="fa-solid fa-envelope"></i>
-                <input type="email" placeholder="Digite o e-mail..." v-model="email" required>
+                <input type="email" placeholder="Digite seu e-mail..." v-model="email" required>
             </div>
         </div>
         <div class="btns">
-            <button @click="cancelar">{{ btn1 }}</button>
-            <button @click="submit">{{ modoEdicao ? 'Salvar' : btn2 }}</button>
+            <button @click="cancelar" type="button">{{ btn1 }}</button>
+            <button @click="submit" type="button">{{ modoEdicao ? 'Salvar' : btn2 }}</button>
         </div>
     </div>
 </template>

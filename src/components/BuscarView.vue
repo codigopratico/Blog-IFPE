@@ -5,6 +5,10 @@
     const texto = ref('Usuário não encontrado')
     const btn = ref('Novo Usuário')
 
+    const { semResultado } = defineProps({
+        semResultado: Boolean
+    })
+
     const emit = defineEmits(['novo-usuario', 'buscar'])
 
     const busca = ref('')
@@ -27,7 +31,7 @@
             v-model="busca"
             >
         </div>
-        <div class="texto" v-if="semResultado & busca.length > 0">
+        <div class="texto" v-if="semResultado && busca.length > 0">
             <h5>{{ texto }}</h5>
         </div>
     </div>
@@ -61,15 +65,16 @@
     .buscar input{
         padding: 8px 10px;
         width: 100%;
-        border: 1px solid var(--color-cinza-escuro);
+        border: 1px solid var(--color-verde-secundario);
         margin-bottom: 5px;
         margin-top: 5px;
         font-size: 16px;
+        border-radius: 0 10px 10px 0;
     }.buscar{
         display: flex;
         align-items: center;
     }.buscar i{
-        font-size: 23.5px;
+        font-size: 21.5px;
         color: var(--color-branco);
         padding: 10px;
         background-color: var(--color-verde-ifpe);
